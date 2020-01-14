@@ -112,7 +112,7 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
+  border: rgb(0, 0, 0) 1px dotted;
   margin: 0.7rem 0;
 }
 
@@ -303,8 +303,10 @@ img {
   border: #ccc solid 1px;
 }
 
-.round-img {
+.round-border-img {
+  padding: 1px;
   border-radius: 50%;
+  border: 4px solid #000000;
 }
 
 /* Forms */
@@ -360,6 +362,7 @@ table th {
 
 .navbar ul {
   display: flex;
+  margin-left: auto;
 }
 
 .navbar a {

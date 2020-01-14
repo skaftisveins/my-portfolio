@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SkillItem from './SkillItem';
 
 const Skills = () => {
-  const [state, setState] = useState({
+  const [state] = useState({
     skills: [
       {
         id: 1,
@@ -18,6 +18,22 @@ const Skills = () => {
         level: 'Advanced',
         rating: 4,
         yearsOfExperience: 1,
+        keywords: []
+      },
+      {
+        id: 3,
+        name: 'HTML5',
+        level: 'Intermediate',
+        rating: 3,
+        yearsOfExperience: 2,
+        keywords: []
+      },
+      {
+        id: 4,
+        name: 'HTML5',
+        level: 'Intermediate',
+        rating: 3,
+        yearsOfExperience: 2,
         keywords: []
       }
     ]

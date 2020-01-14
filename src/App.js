@@ -6,7 +6,7 @@ import { APIUrl } from './Config';
 import './App.css';
 
 function App() {
-  const [response, setResponse] = useState(null);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function App() {
       try {
         const res = await fetch(APIUrl);
         const json = await res.json();
-        setResponse(json);
+        setData(json);
       } catch (err) {
         setError(error);
       }
@@ -22,16 +22,20 @@ function App() {
     FetchData();
   }, [error]);
 
-  if (!response) return <div />;
-  console.log(response);
+  if (!data) return <div />;
+  console.log(data);
 
   return (
     <div className='App'>
       <Navbar />
       <div className='container'>
-        <h1 className='x-large text-primary text-center'>
-          {response.basics.name}
-        </h1>
+        <img
+          src={data.basics.picture}
+          alt=''
+          className='round-border-img all-center'
+          style={{ width: '240px' }}
+        />
+        <h1 className='x-large text-primary text-center'>{data.basics.name}</h1>
         <Skills />
       </div>
     </div>
