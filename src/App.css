@@ -7,6 +7,10 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+
+  --smallFont: 10px;
+  --mediumFont: 20px;
+  --largeFont: 66px;
 }
 
 * {
@@ -19,8 +23,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background: linear-gradient(to top, #3a7bd5, #00d2ff);
-  color: #333;
+  background: linear-gradient(to bottom, #3a7bd5, #00d2ff);
+  color: var(--dark-color);
 }
 
 a {
@@ -54,6 +58,46 @@ img {
   padding: 2rem;
   /* background-color: #333;
   color: #fff; */
+}
+
+.banner-text {
+  background-color: var(--dark-color);
+  opacity: 0.8;
+  width: 75%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.banner-text h1 {
+  font-size: var(--largeFont);
+  font-weight: bold;
+  color: var(--light-color);
+}
+
+.banner-text hr {
+  border-top: var(--light-color) dotted;
+  width: 50%;
+  margin: auto;
+}
+
+.banner-text p {
+  color: var(--light-color);
+  font-size: var(--mediumFont);
+  padding: 1em;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+  color: var(--light-color);
+}
+
+.social-links i {
+  color: var(--light-color);
+  font-size: 5em;
+  padding: 8px;
 }
 
 /* Text Styles*/

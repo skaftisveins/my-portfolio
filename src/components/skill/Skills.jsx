@@ -1,39 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SkillItem from './SkillItem';
 
-const Skills = () => {
-  const [state] = useState({
-    skills: [
-      {
-        id: 1,
-        name: 'HTML5',
-        level: 'Intermediate',
-        rating: 3,
-        yearsOfExperience: 2,
-        keywords: []
-      },
-      {
-        id: 2,
-        name: 'CSS3',
-        level: 'Intermediate',
-        rating: 3,
-        yearsOfExperience: 2,
-        keywords: []
-      },
-      {
-        id: 3,
-        name: 'JavaScript',
-        level: 'Advanced',
-        rating: 4,
-        yearsOfExperience: 1,
-        keywords: []
-      }
-    ]
-  });
+const Skills = ({ data }) => {
   return (
     <div style={skillStyle}>
-      {state.skills.map(skill => (
-        <SkillItem key={skill.id} skill={skill} />
+      {data.skills.map(skill => (
+        <SkillItem key={skill.name} skill={skill} />
       ))}
     </div>
   );

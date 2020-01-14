@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+// import { Switch, Route } from 'react-router-dom';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import Navbar from './components/layout/Navbar';
 import Skills from './components/skill/Skills';
@@ -32,10 +32,10 @@ function App() {
   };
 
   if (!data) return <div />;
-  console.log(data);
+  console.log(data.basics);
 
   return (
-    <div className='App'>
+    <div className='App id=section0'>
       <Navbar />
       <div className='container text-center'>
         <img
@@ -45,13 +45,10 @@ function App() {
           style={{ width: '240px' }}
         />
         <h1 className='x-large text-primary'>{data.basics.name}</h1>
-        <span>{data.basics.headline}</span>
-        <Section
-          id='section1'
-          title={data.basics.label}
-          subtitle={data.basics.summary}
-        />
-        <Skills />
+        <span>{data.basics.summary}</span>
+        <Section id='section1' title={data.basics.label} />
+
+        <Skills data={data} />
         <Section id='section2' title='Section 2 - Resume' subtitle={mockText} />
         <Section
           id='section3'
@@ -59,7 +56,7 @@ function App() {
           subtitle={mockText}
         />
         <About />
-        <Link smooth={true} onClick={scrollToTop}>
+        <Link to='section0' smooth={true} onClick={scrollToTop}>
           LETS GO TO THE TOP!
         </Link>
       </div>
