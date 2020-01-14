@@ -14,26 +14,18 @@ const Skills = () => {
       },
       {
         id: 2,
-        name: 'JavaScript',
-        level: 'Advanced',
-        rating: 4,
-        yearsOfExperience: 1,
+        name: 'CSS3',
+        level: 'Intermediate',
+        rating: 3,
+        yearsOfExperience: 2,
         keywords: []
       },
       {
         id: 3,
-        name: 'HTML5',
-        level: 'Intermediate',
-        rating: 3,
-        yearsOfExperience: 2,
-        keywords: []
-      },
-      {
-        id: 4,
-        name: 'HTML5',
-        level: 'Intermediate',
-        rating: 3,
-        yearsOfExperience: 2,
+        name: 'JavaScript',
+        level: 'Advanced',
+        rating: 4,
+        yearsOfExperience: 1,
         keywords: []
       }
     ]

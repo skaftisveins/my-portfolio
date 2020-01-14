@@ -1,13 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Navbar = ({ title }) => {
   return (
     <nav className='navbar bg-primary'>
-      <h1>{title}</h1><ul>
-        <a href=""><li>Resume</li></a>
-        <a href=""><li>About Me</li></a>
-        <a href=""><li>Contact</li></a>
+      <h1>{title}</h1>
+      <ul>
+        <li>
+          <Link
+            activeClass='active'
+            to='section1'
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            About Me
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass='active'
+            to='section2'
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            Resume
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass='active'
+            to='section3'
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            Contact
+          </Link>
+        </li>
       </ul>
     </nav>
   );
