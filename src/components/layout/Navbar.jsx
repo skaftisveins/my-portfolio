@@ -13,7 +13,7 @@ const Navbar = ({ title }) => {
             to='section1'
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={-200}
             duration={500}
           >
             About Me
@@ -28,13 +28,25 @@ const Navbar = ({ title }) => {
             offset={-70}
             duration={500}
           >
-            Resume
+            Skills
           </Link>
         </li>
         <li>
           <Link
             activeClass='active'
             to='section3'
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            Projects
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass='active'
+            to='section4'
             spy={true}
             smooth={true}
             offset={-70}

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-// import { Switch, Route } from 'react-router-dom';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import Navbar from './components/layout/Navbar';
 import Skills from './components/skill/Skills';
-
-import { APIUrl } from './Config';
-import './App.css';
+import Projects from './components/project/Projects';
 import About from './components/layout/About';
 import Section from './components/layout/Section';
 import mockText from './MockData';
+
+import { APIUrl } from './Config';
+import './App.css';
 
 function App() {
   const [data, setData] = useState(null);
@@ -32,10 +32,10 @@ function App() {
   };
 
   if (!data) return <div />;
-  console.log(data.basics);
+  console.log(data);
 
   return (
-    <div className='App id=section0'>
+    <div className='App' id='section0'>
       <Navbar />
       <div className='container text-center'>
         <img
@@ -45,18 +45,18 @@ function App() {
           style={{ width: '240px' }}
         />
         <h1 className='x-large text-primary'>{data.basics.name}</h1>
-        <span>{data.basics.summary}</span>
+        <span className='lead'>{data.basics.summary}</span>
         <Section id='section1' title={data.basics.label} />
-
-        <Skills data={data} />
-        <Section id='section2' title='Section 2 - Resume' subtitle={mockText} />
-        <Section
-          id='section3'
-          title='Section 3 - Contact'
-          subtitle={mockText}
-        />
-        <About />
-        <Link to='section0' smooth={true} onClick={scrollToTop}>
+        <Skills data={data} id='section2' />
+        <Projects data={data} id='section3' />
+        <Section id='section4' title='Contact Me' subtitle={mockText} />
+        <Link
+          to='section0'
+          smooth={true}
+          onClick={scrollToTop}
+          spy={true}
+          duration={200}
+        >
           LETS GO TO THE TOP!
         </Link>
       </div>
