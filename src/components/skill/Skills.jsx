@@ -2,27 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SkillItem from './SkillItem';
 
-const Skills = ({ id, data }) => {
+import '../../App.css';
+
+const Skills = ({ id, data, title }) => {
   return (
-    <div style={skillStyle}>
-      {data.skills.map(skill => (
-        <SkillItem id={id} key={skill.name} skill={skill} />
-      ))}
-    </div>
+    <>
+      <h3 className='x-large'>{title}</h3>
+      <div className='cards'>
+        {data.skills.map(skill => (
+          <SkillItem id={id} key={skill.name} skill={skill} />
+        ))}
+      </div>
+    </>
   );
+};
+
+Skills.defaultProps = {
+  title: 'Skills'
 };
 
 Skills.propTypes = {
   data: PropTypes.object.isRequired,
   id: PropTypes.string.isRequired
-};
-
-// Refactor as Section styled item..?
-const skillStyle = {
-  flexWrap: 'wrap',
-  flexDirection: 'column'
-  // gridTemplateColumns: 'repeat(3, 1fr)',
-  // gridGap: '1rem'
 };
 
 export default Skills;

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
+
 import Navbar from './components/layout/Navbar';
 import Skills from './components/skill/Skills';
 import Projects from './components/project/Projects';
+import Contact from './components/layout/Contact';
 import About from './components/layout/About';
 import Section from './components/layout/Section';
 import mockText from './MockData';
@@ -49,7 +51,7 @@ function App() {
         <Section id='section1' title={data.basics.label} />
         <Skills data={data} id='section2' />
         <Projects data={data} id='section3' />
-        <Section id='section4' title='Contact Me' subtitle={mockText} />
+        <Contact id='section4' />
         <Link
           to='section0'
           smooth={true}
