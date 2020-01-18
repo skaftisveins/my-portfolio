@@ -34,7 +34,8 @@ function App() {
   };
 
   if (!data) return <div />;
-  console.log(data);
+  console.log(data.projects[2].images);
+  console.log(data.projects[2].images[0].resolutions.mobile.url);
 
   return (
     <div className='App' id='section0'>

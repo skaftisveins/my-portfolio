@@ -31,7 +31,13 @@ const Contact = ({ id, title }) => {
         <input type='hidden' name='contact_number' />
         <input type='text' name='user_name' placeholder='Your Name' />
         <input type='email' name='user_email' placeholder='Your Email' />
-        <textarea name='message' placeholder='Drop me a line.' />
+        <textarea
+          name='message'
+          placeholder='Drop me a line.'
+          wrap='hard'
+          cols='30'
+          rows='4'
+        />
         <input type='submit' value='Send' className='btn btn-dark' />
       </form>
     </div>
