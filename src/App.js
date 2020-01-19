@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
+import Particles from 'react-particles-js';
 
 import Navbar from './components/layout/Navbar';
 import Skills from './components/skill/Skills';
@@ -33,6 +34,22 @@ function App() {
     scroll.scrollToTop();
   };
 
+  const particlesOptions = {
+    particles: {
+      number: {
+        value: 20,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      line_linked: {
+        enable: true,
+        opacity: 0.08
+      }
+    }
+  };
+
   if (!data) return <div />;
   console.log(data.projects[2].images);
   console.log(data.projects[2].images[0].resolutions.mobile.url);
@@ -40,6 +57,7 @@ function App() {
   return (
     <div className='App' id='section0'>
       <Navbar />
+      <Particles className='particles' params={particlesOptions} />
       <div className='container text-center'>
         <img
           src={data.basics.picture}
@@ -47,7 +65,7 @@ function App() {
           className='round-border-img all-center'
           style={{ width: '240px' }}
         />
-        <h1 className='x-large text-primary'>{data.basics.name}</h1>
+        <h1 className='x-large text-light'>{data.basics.name}</h1>
         <span className='lead'>{data.basics.summary}</span>
         <Section id='section1' title={data.basics.label} />
         <Skills data={data} id='section2' />

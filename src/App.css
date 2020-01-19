@@ -4,7 +4,7 @@
 :root {
   --primary-color: #000000;
   --dark-color: #333333;
-  --light-color: #f4f4f4;
+  --light-color: #f4f4f4ec;
   --danger-color: #dc3545;
   --success-color: #28a745;
 
@@ -23,8 +23,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background: linear-gradient(to bottom, #3a7bd5, #00d2ff);
-  color: var(--dark-color);
+  background: linear-gradient(to bottom, #264888, #868fa0);
+  color: var(--light-color);
 }
 
 a {
@@ -53,7 +53,7 @@ img {
 }
 
 .banner-text {
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
   opacity: 0.8;
   width: 75%;
   margin: auto;
@@ -90,6 +90,16 @@ img {
   color: var(--light-color);
   font-size: 5em;
   padding: 8px;
+}
+
+/* React Particles */
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /* Text Styles*/
@@ -446,7 +456,7 @@ table th {
 
 .navbar a:hover {
   color: var(--light-color);
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--light-color);
   cursor: pointer;
 }
 
